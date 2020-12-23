@@ -4,12 +4,12 @@ package system;
 *
 * @author admin
 */
-public class Main extends javax.swing.JFrame {
+public class Mains extends javax.swing.JFrame {
 
    /**
     * Creates new form Main
     */
-   public Main() {
+   public Mains() {
        initComponents();
    }
 
