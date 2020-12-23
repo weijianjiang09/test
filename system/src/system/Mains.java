@@ -27,7 +27,7 @@ public class Mains extends javax.swing.JFrame {
 
        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-       jLabel1.setText("ϵͳ");
+       jLabel1.setText("系统");
 
        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
        jPanel1.setLayout(jPanel1Layout);
