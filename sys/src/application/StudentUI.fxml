@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.AnchorPane?>
+
+
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="285.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.StudentUIController" >
+   <children>
+      <Label prefHeight="42.0" prefWidth="249.0" text="请输入你要查询的学号，课程号：" />
+      <TextField fx:id="studentnum" prefHeight="30.0" prefWidth="208.0" promptText="请输入学号" />
+      <TextField fx:id="coursenum" promptText="请输入课程号" />
+      <Button fx:id="inquire" mnemonicParsing="false" prefHeight="30.0" prefWidth="107.0" text="查询" />
+      <Pane prefHeight="267.0" prefWidth="285.0">
+         <children>
+            <Label layoutX="44.0" layoutY="65.0" prefHeight="30.0" prefWidth="155.0" text="你的成绩为：" />
+            <TextField fx:id="performance" layoutX="65.0" layoutY="95.0" prefHeight="30.0" prefWidth="145.0" />
+         </children>
+      </Pane>
+   </children>
+</VBox>

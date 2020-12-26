@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane prefHeight="765.0" prefWidth="1074.0" style="-fx-border-width: 5;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <TitledPane animated="false" prefHeight="87.0" prefWidth="265.0" style="-fx-border-color: blue;" text="学生管理系统">
+         <content>
+            <ListView prefHeight="41.0" prefWidth="261.0" style="-fx-background-color: ;" />
+         </content>
+         <graphic>
+         	<Label prefHeight="30.0" prefWidth="62.0" text="密码：" />
+         </graphic>
+      </TitledPane>
+   </children>
+</AnchorPane>

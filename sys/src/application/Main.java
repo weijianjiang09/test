@@ -20,10 +20,10 @@ public class Main extends Application {
     public void start(Stage stage) throws Exception {  
         Parent root = FXMLLoader.load(getClass().getResource("LoginUI.fxml"));  
   
-        Scene scene = new Scene(root, 600, 400);  
+        Scene scene = new Scene(root,500, 400);  
         stage.initStyle(StageStyle.DECORATED);  
         stage.setScene(scene);  
-        stage.setTitle("教学管理系统登录");  
+      stage.setTitle("教学管理系统登录");  
         stage.show();  
     }  
   
