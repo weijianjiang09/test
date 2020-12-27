@@ -1,6 +1,7 @@
 package application;
 
 import java.io.IOException;
+import java.sql.Statement;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -25,15 +26,16 @@ public class LoginController {
 	
 	public void btnLoginAction() throws Exception {
 		
-		Parent root = FXMLLoader.load(getClass().getResource("StudentMain.fxml"));  
+		Parent root = FXMLLoader.load(getClass().getResource("TeacherMain.fxml"));  
 		  
-        Scene scene = new Scene(root,700, 400);  
+        Scene scene = new Scene(root,600, 500);  
         Stage stage=new Stage();
 		stage.initStyle(StageStyle.DECORATED);  
         stage.setScene(scene);  
-        stage.setTitle("学生教务系统");  
+        stage.setTitle("瀛︾敓鏁欏姟绯荤粺");  
         stage.show();
-      
+        
+     
 	}
 	
 

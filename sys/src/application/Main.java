@@ -24,7 +24,7 @@ public class Main extends Application {
         Scene scene = new Scene(root,500, 400);  
         stage.initStyle(StageStyle.DECORATED);  
         stage.setScene(scene);  
-        stage.setTitle("教学管理系统登录");  
+        stage.setTitle("鏁欏姟绯荤粺鐧诲綍鐣岄潰");  
         stage.show();  
       
     }  
