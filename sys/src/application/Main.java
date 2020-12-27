@@ -3,6 +3,7 @@ package application;
 import java.io.IOException;
 
 import javafx.application.Application;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXMLLoader;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
@@ -23,8 +24,10 @@ public class Main extends Application {
         Scene scene = new Scene(root,500, 400);  
         stage.initStyle(StageStyle.DECORATED);  
         stage.setScene(scene);  
-      stage.setTitle("教学管理系统登录");  
+        stage.setTitle("教学管理系统登录");  
         stage.show();  
+      
     }  
+   
   
 }
