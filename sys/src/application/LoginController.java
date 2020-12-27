@@ -1,7 +1,9 @@
 package application;
 
 import java.io.IOException;
+import java.sql.Statement;
 
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -22,15 +24,19 @@ public class LoginController {
 	private TextField txtUserId;
 	
 	
-	public void btnLoginAction() throws IOException {
-		Parent root = FXMLLoader.load(getClass().getResource("SystemMain.fxml"));  
+	public void btnLoginAction() throws Exception {
+		
+		Parent root = FXMLLoader.load(getClass().getResource("TeacherMain.fxml"));  
 		  
-        Scene scene = new Scene(root,500, 400);  
+        Scene scene = new Scene(root,600, 500);  
         Stage stage=new Stage();
 		stage.initStyle(StageStyle.DECORATED);  
         stage.setScene(scene);  
-      stage.setTitle("教学管理系统登录");  
+        stage.setTitle("瀛︾敓鏁欏姟绯荤粺");  
         stage.show();
+        
+     
 	}
+	
 
 }
