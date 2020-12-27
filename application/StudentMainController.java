@@ -1,4 +1,4 @@
-package sys.src.application;
+package application;
 
 import javafx.fxml.FXML;
 
