@@ -34,7 +34,7 @@
     </Tab>
     <Tab text="查询成绩">
       <content>
-        <AnchorPane fx:id="txtresult_1" minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
                <children>
                   <TextField fx:id="txtcourse_1" layoutX="91.0" layoutY="105.0" prefHeight="30.0" prefWidth="218.0" promptText="请输入课程号" />
                   <Button fx:id="btnresults_1" layoutX="348.0" layoutY="105.0" mnemonicParsing="false" onAction="#btnresults_1Action" prefHeight="30.0" prefWidth="104.0" text="查询成绩" />
@@ -43,7 +43,7 @@
                         <Font name="Constantia" size="18.0" />
                      </font>
                   </Label>
-                  <Label layoutX="238.0" layoutY="213.0" prefHeight="20.0" prefWidth="107.0" text="0" />
+                  <Label fx:id="txtresult_1" layoutX="238.0" layoutY="213.0" prefHeight="20.0" prefWidth="107.0" text="0" />
                </children></AnchorPane>
       </content>
     </Tab>
@@ -55,7 +55,7 @@
                   <TextField fx:id="txtcourse_2" layoutX="72.0" layoutY="143.0" promptText="请输入课程号" />
                   <Button fx:id="btnresults_2" layoutX="324.0" layoutY="143.0" mnemonicParsing="false" onAction="#btnresults_2Action" prefHeight="30.0" prefWidth="114.0" text="查询上课时间" />
                   <Label layoutX="72.0" layoutY="247.0" prefHeight="34.0" prefWidth="235.0" text="该课程在这个教室的上课时间为：" />
-                  <Label fx:id="txtresult_2" layoutX="307.0" layoutY="250.0" prefHeight="29.0" prefWidth="111.0" text="..." />
+                  <Label fx:id="txtresult_2" layoutX="307.0" layoutY="250.0" prefHeight="29.0" prefWidth="246.0" text="..." />
                </children>
             </AnchorPane>
         </content>
