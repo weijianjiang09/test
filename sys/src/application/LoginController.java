@@ -1,21 +1,24 @@
 package application;
 
 import java.awt.Window;
+
 import java.io.IOException;
+import java.net.URL;
 import java.sql.Statement;
+import java.util.HashMap;
+import java.util.Map;
+import java.util.ResourceBundle;
 
 import javax.swing.JOptionPane;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Alert;
-<<<<<<< HEAD
-=======
 import javafx.scene.control.Alert.AlertType;
->>>>>>> branch 'master' of git@github.com:weijianjiang09/test.git
 import javafx.scene.control.Button;
 import javafx.scene.control.ButtonType;
 import javafx.scene.control.TextField;
@@ -23,7 +26,7 @@ import javafx.stage.Stage;
 import javafx.stage.StageStyle;
 import javafx.scene.control.PasswordField;
 
-public class LoginController {
+public class LoginController{
 	@FXML
 	private Button btnLogin;
 	@FXML
@@ -33,16 +36,23 @@ public class LoginController {
 	
 	
 	public void btnLoginAction() throws Exception {
-
+		String password = String.valueOf(txtPassword.getText());
+		
+		if(password.equals("111111")) {
+			
 		String key;
 		if((key=String.valueOf(txtUserId.getText().charAt(0))).equals("s")) {
-			Parent root = FXMLLoader.load(getClass().getResource("StudentMain.fxml")); 
+//			Parent root = FXMLLoader.load(getClass().getResource("StudentMain.fxml"));
+			FXMLLoader loader =new  FXMLLoader(getClass().getResource("StudentMain.fxml"));
+			Parent root =loader.load();
+			StudentMainController controller = loader.getController();
+			controller.initData(txtUserId.getText());
 			Scene scene = new Scene(root,600, 500);
 			Stage stage=new Stage();
 			stage.initStyle(StageStyle.DECORATED); 
 			stage.setScene(scene);
 			stage.setTitle("学生教务系统");  
-	        stage.show();
+			stage.show(); 
 		}else if((key=String.valueOf(txtUserId.getText().charAt(0))).equals("t")){
 		    Parent root = FXMLLoader.load(getClass().getResource("TeacherMain.fxml"));  
 		    Scene scene = new Scene(root,600, 500);
@@ -52,9 +62,14 @@ public class LoginController {
 		    stage.setTitle("教师教务系统");  
 	        stage.show();
 		}else {
-			Stage stages = (Stage) btnLogin.getScene().getWindow();
-			stages.close();
+			new Alert(Alert.AlertType.NONE, "输入错误", new ButtonType[]{ButtonType.CLOSE}).show();
 		}
-    
+		Stage stager = (Stage) btnLogin.getScene().getWindow();
+		stager.close();
+		}else {
+			new Alert(Alert.AlertType.NONE, "输入错误", new ButtonType[]{ButtonType.CLOSE}).show();
+		} 
+		
+
 	}
 }
