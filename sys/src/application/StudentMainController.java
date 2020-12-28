@@ -137,6 +137,7 @@ public class StudentMainController {
 				System.out.println("go die 2");
 			}
 		}
+		txtcourse_1.setText("");
 	}
 	// Event Listener on Button[#btnresults_2].onAction
 	@FXML
@@ -177,6 +178,8 @@ public class StudentMainController {
 				System.out.println("go die 2");
 			}
 		}
+		txtclass_num_2.setText("");
+		txtcourse_2.setText("");
 	}
 	// Event Listener on Button[#btnresult_3].onAction
 	@FXML

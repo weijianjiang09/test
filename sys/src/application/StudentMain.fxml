@@ -68,9 +68,9 @@
                   <Button fx:id="btnresult_3" layoutX="319.0" layoutY="68.0" mnemonicParsing="false" onAction="#btnresults_3Action" prefHeight="30.0" prefWidth="94.0" text="查询" />
                   <TableView fx:id="txtcoursechart_3" layoutX="81.0" layoutY="121.0" prefHeight="138.0" prefWidth="443.0">
                     <columns>
-                      <TableColumn fx:id="chart_coursename" prefWidth="130.0" text="课程名" />
-                        <TableColumn fx:id="chart_coursepreposition" prefWidth="145.0" text="先修课程号" />
-                      <TableColumn fx:id="chart_credit" prefWidth="167.0" text="学分" />
+                      <TableColumn fx:id="chart_coursename" prefWidth="130.0" text="课程名" visible="false" />
+                        <TableColumn fx:id="chart_coursepreposition" prefWidth="145.0" text="先修课程号" visible="false" />
+                      <TableColumn fx:id="chart_credit" prefWidth="167.0" text="学分" visible="false" />
                     </columns>
                   </TableView>
                </children>

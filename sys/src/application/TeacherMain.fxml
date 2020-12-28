@@ -20,10 +20,10 @@
                   <Label layoutX="56.0" layoutY="96.0" text="教师编号：" />
                   <Label layoutX="56.0" layoutY="140.0" text="系编码：" />
                   <Label layoutX="56.0" layoutY="181.0" text="教师姓名：" />
-                  <Label fx:id="txtteachernum_0" layoutX="160.0" layoutY="96.0" prefHeight="20.0" prefWidth="98.0" text="---" />
                   <Label fx:id="txtcno_0" layoutX="160.0" layoutY="140.0" prefHeight="20.0" prefWidth="95.0" text="---" />
                   <Label fx:id="txtteachername_0" layoutX="160.0" layoutY="181.0" prefHeight="20.0" prefWidth="107.0" text="---" />
                   <Button fx:id="btnupdate" layoutX="325.0" layoutY="41.0" mnemonicParsing="false" onAction="#updateAction" text="更新我的数据" />
+                  <TextField fx:id="txtTno_0" layoutX="154.0" layoutY="91.0" promptText="请输入编号" />
                </children></AnchorPane>
       </content>
     </Tab>
