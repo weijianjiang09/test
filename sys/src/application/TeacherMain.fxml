@@ -23,6 +23,7 @@
                   <Label fx:id="txtteachernum_0" layoutX="160.0" layoutY="96.0" prefHeight="20.0" prefWidth="98.0" text="---" />
                   <Label fx:id="txtcno_0" layoutX="160.0" layoutY="140.0" prefHeight="20.0" prefWidth="95.0" text="---" />
                   <Label fx:id="txtteachername_0" layoutX="160.0" layoutY="181.0" prefHeight="20.0" prefWidth="107.0" text="---" />
+                  <Button fx:id="btnupdate" layoutX="325.0" layoutY="41.0" mnemonicParsing="false" onAction="#updateAction" text="更新我的数据" />
                </children></AnchorPane>
       </content>
     </Tab>

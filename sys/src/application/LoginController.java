@@ -30,6 +30,9 @@ public class LoginController {
 	
 	public void btnLoginAction() throws Exception {
 	
+		String password = String.valueOf(txtPassword.getText());
+		if(password.equals("111111")) {
+			
 		String key;
 		if((key=String.valueOf(txtUserId.getText().charAt(0))).equals("s")) {
 			Parent root = FXMLLoader.load(getClass().getResource("StudentMain.fxml")); 
@@ -38,7 +41,10 @@ public class LoginController {
 			stage.initStyle(StageStyle.DECORATED); 
 			stage.setScene(scene);
 			stage.setTitle("学生教务系统");  
-	        stage.show();
+			stage.show();
+			
+
+	        
 		}else if((key=String.valueOf(txtUserId.getText().charAt(0))).equals("t")){
 		    Parent root = FXMLLoader.load(getClass().getResource("TeacherMain.fxml"));  
 		    Scene scene = new Scene(root,600, 500);
@@ -48,10 +54,13 @@ public class LoginController {
 		    stage.setTitle("教师教务系统");  
 	        stage.show();
 		}else {
-			Stage stages = (Stage) btnLogin.getScene().getWindow();
-			stages.close();
+			new Alert(Alert.AlertType.NONE, "输入错误", new ButtonType[]{ButtonType.CLOSE}).show();
 		}
-         
+		Stage stager = (Stage) btnLogin.getScene().getWindow();
+		stager.close();
+		}else {
+			new Alert(Alert.AlertType.NONE, "输入错误", new ButtonType[]{ButtonType.CLOSE}).show();
+		}
       
           
      
