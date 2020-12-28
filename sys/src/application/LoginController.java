@@ -1,6 +1,9 @@
 package application;
 
 import java.io.IOException;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.ResultSet;
 import java.sql.Statement;
 
 import javax.swing.JOptionPane;
@@ -30,8 +33,26 @@ public class LoginController {
 	
 	public void btnLoginAction() throws Exception {
 	
+	
 		String password = String.valueOf(txtPassword.getText());
-		if(password.equals("111111")) {
+		String id =txtUserId.getText();
+		if(id.equals("")||password.equals("")) {
+			new Alert(Alert.AlertType.NONE, "输入为空", new ButtonType[]{ButtonType.CLOSE}).show();
+			return;
+		}
+		
+		Connection conn = null;
+		ResultSet res = null;
+		Statement stat = null;
+		
+			
+			Class.forName("com.mysql.cj.jdbc.Driver");
+			conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/sss?useSSL=false&serverTimezone=UTC","root","111111");
+			String sql = "SELECT  id,password FROM user";
+			stat = conn.createStatement();
+			res=stat.executeQuery(sql);
+			while(res.next()) {
+		if(id.equals(res.getString(1))&&password.equals(res.getString(2))) {
 			
 		String key;
 		if((key=String.valueOf(txtUserId.getText().charAt(0))).equals("s")) {
@@ -53,19 +74,19 @@ public class LoginController {
 		    stage.setScene(scene);
 		    stage.setTitle("教师教务系统");  
 	        stage.show();
-		}else {
-			new Alert(Alert.AlertType.NONE, "输入错误", new ButtonType[]{ButtonType.CLOSE}).show();
 		}
 		Stage stager = (Stage) btnLogin.getScene().getWindow();
 		stager.close();
-		}else {
-			new Alert(Alert.AlertType.NONE, "输入错误", new ButtonType[]{ButtonType.CLOSE}).show();
+		stat.close();
+		conn.close();
+		return;
 		}
       
-          
-     
-        
-     
+      }
+			
+			new Alert(Alert.AlertType.NONE, "账号错误", new ButtonType[]{ButtonType.CLOSE}).show();
+		
+			
 	}
 	
 
