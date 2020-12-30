@@ -101,6 +101,7 @@ public class TeacherMainController implements Initializable{
 	private Button btndepartment_change;
 	
 	private CapsRes capsRes;
+	
 	public String txtUserId;
 	// Event Listener on Button[#btnstudent_look].onAction
 	@FXML

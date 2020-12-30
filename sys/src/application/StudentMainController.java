@@ -74,6 +74,7 @@ public class StudentMainController implements Initializable {
 	private TableColumn chart_coursepreposition;
 	@FXML
 	private TableColumn chart_credit;
+	
 	public String txtUserId;
 	// Event Listener on Button[#btnupdate].onAction
 	public void updateAction(ActionEvent event) throws Exception{

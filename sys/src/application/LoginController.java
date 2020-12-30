@@ -52,6 +52,7 @@ public class LoginController{
 			stage.initStyle(StageStyle.DECORATED); 
 			stage.setScene(scene);
 			stage.setTitle("学生教务系统");  
+			
 			stage.show(); 
 //		}else if((key=String.valueOf(txtUserId.getText().charAt(0))).equals("t")){
 //		    Parent root = FXMLLoader.load(getClass().getResource("TeacherMain.fxml"));  
