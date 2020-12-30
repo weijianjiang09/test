@@ -121,7 +121,44 @@
       </Tab>
       <Tab text="成绩管理">
         <content>
-          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+               <children>
+                  <TabPane layoutX="6.0" prefHeight="494.0" prefWidth="595.0" tabClosingPolicy="UNAVAILABLE">
+                    <tabs>
+                      <Tab text="浏览所有学生成绩信息">
+                        <content>
+                          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                 <children>
+                                    <TableView fx:id="gradechart" layoutX="24.0" layoutY="28.0" prefHeight="200.0" prefWidth="414.0">
+                                      <columns>
+                                        <TableColumn prefWidth="124.0" text="学号" />
+                                        <TableColumn prefWidth="126.0" text="课程号" />
+                                          <TableColumn prefWidth="163.0" text="成绩" />
+                                      </columns>
+                                    </TableView>
+                                    <TextField fx:id="txtgradesno_change" layoutX="29.0" layoutY="254.0" prefHeight="30.0" prefWidth="168.0" promptText="输入学号" visible="false" />
+                                    <TextField fx:id="txtgradecno_change" layoutX="29.0" layoutY="300.0" prefHeight="30.0" prefWidth="168.0" promptText="输入课程号" visible="false" />
+                                    <TextField fx:id="txtgrade_change" layoutX="29.0" layoutY="346.0" prefHeight="30.0" prefWidth="167.0" promptText="输入成绩" visible="false" />
+                                    <Button fx:id="btngrade_change" layoutX="271.0" layoutY="346.0" mnemonicParsing="false" onAction="#btngrade_changeAction" text="确认修改" visible="false" />
+                                 </children>
+                              </AnchorPane>
+                        </content>
+                      </Tab>
+                      <Tab text="添加学生信息">
+                        <content>
+                          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                 <children>
+                                    <Button fx:id="btngrade_add" layoutX="351.0" layoutY="190.0" mnemonicParsing="false" onAction="#btngrade_addAction" text="确认修改" />
+                                    <TextField fx:id="txtgradesno_add" layoutX="56.0" layoutY="47.0" promptText="请输入学号" />
+                                    <TextField fx:id="txtgradecno_add" layoutX="56.0" layoutY="119.0" promptText="请输入课程号" />
+                                    <TextField fx:id="txtgrade_add" layoutX="56.0" layoutY="190.0" promptText="请输入成绩" />
+                                 </children>
+                              </AnchorPane>
+                        </content>
+                      </Tab>
+                    </tabs>
+                  </TabPane>
+               </children></AnchorPane>
         </content>
       </Tab>
   </tabs>
