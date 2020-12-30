@@ -37,14 +37,9 @@
       <content>
         <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
                <children>
-                  <TextField fx:id="txtcourse_1" layoutX="91.0" layoutY="105.0" prefHeight="30.0" prefWidth="218.0" promptText="请输入课程号" />
-                  <Button fx:id="btnresults_1" layoutX="348.0" layoutY="105.0" mnemonicParsing="false" onAction="#btnresults_1Action" prefHeight="30.0" prefWidth="104.0" text="查询成绩" />
-                  <Label layoutX="91.0" layoutY="204.0" prefHeight="37.0" prefWidth="147.0" text="你该课程成绩为：">
-                     <font>
-                        <Font name="Constantia" size="18.0" />
-                     </font>
-                  </Label>
-                  <Label fx:id="txtresult_1" layoutX="238.0" layoutY="213.0" prefHeight="20.0" prefWidth="107.0" text="0" />
+                  <TextField fx:id="txtcourse_1" layoutX="18.0" layoutY="14.0" prefHeight="30.0" prefWidth="218.0" promptText="请输入课程号" />
+                  <Button fx:id="btnresults_1" layoutX="292.0" layoutY="14.0" mnemonicParsing="false" onAction="#btnresults_1Action" prefHeight="30.0" prefWidth="104.0" text="查询成绩" />
+                  <TableView fx:id="chart_1" layoutX="18.0" layoutY="68.0" prefHeight="255.0" prefWidth="462.0" />
                </children></AnchorPane>
       </content>
     </Tab>
@@ -65,16 +60,17 @@
       </Tab>
       <Tab text="查询课程">
         <content>
-          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+          <AnchorPane fx:id="txtcourse_3" minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
                <children>
-                  <Button fx:id="btnresult_3" layoutX="81.0" layoutY="68.0" mnemonicParsing="false" onAction="#btnresults_3Action" prefHeight="30.0" prefWidth="125.0" text="查询所有课程" />
-                  <TableView fx:id="txtcoursechart_3" layoutX="81.0" layoutY="121.0" prefHeight="138.0" prefWidth="443.0">
+                  <Button fx:id="btnresult_3" layoutX="386.0" layoutY="67.0" mnemonicParsing="false" onAction="#btnresults_3Action" prefHeight="30.0" prefWidth="125.0" text="查询课程" />
+                  <TableView fx:id="txtcoursechart_3" layoutX="68.0" layoutY="123.0" prefHeight="138.0" prefWidth="443.0">
                     <columns>
                       <TableColumn fx:id="chart_coursename" prefWidth="130.0" text="课程名" visible="false" />
                         <TableColumn fx:id="chart_coursepreposition" prefWidth="145.0" text="先修课程号" visible="false" />
                       <TableColumn fx:id="chart_credit" prefWidth="167.0" text="学分" visible="false" />
                     </columns>
                   </TableView>
+                  <TextField layoutX="68.0" layoutY="67.0" promptText="请输入课程号" />
                </children>
             </AnchorPane>
         </content>
