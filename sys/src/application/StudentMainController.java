@@ -50,7 +50,7 @@ public class StudentMainController implements Initializable {
 	@FXML
 	private Button btnupdate;
 	@FXML
-	private TextField txtsno_0;
+	private Label txtsno_0;
 	@FXML
 	private TextField txtcourse_1;
 	@FXML
