@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.text.*?>
 <?import javafx.scene.chart.*?>
 <?import javafx.scene.media.*?>
 <?import javafx.scene.image.*?>
@@ -11,20 +10,15 @@
 
 <Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="325.0" prefWidth="492.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.LoginController">
    <children>
-      <Pane layoutY="-12.0" prefHeight="337.0" prefWidth="492.0">
+      <Pane prefHeight="325.0" prefWidth="492.0">
          <children>
-            <Label layoutX="101.0" layoutY="116.0" prefHeight="30.0" prefWidth="62.0" text="账号：" />
-            <TextField fx:id="txtUserId" layoutX="171.0" layoutY="116.0" promptText="请输入" />
-            <Label layoutX="101.0" layoutY="169.0" prefHeight="30.0" prefWidth="62.0" text="密码：" />
-            <PasswordField fx:id="txtPassword" layoutX="171.0" layoutY="169.0" promptText="请输入" />
-            <Button fx:id="btnLogin" layoutX="205.0" layoutY="221.0" mnemonicParsing="false" onAction="#btnLoginAction" prefHeight="30.0" prefWidth="62.0" text="登录" />
-            <Label layoutX="111.0" layoutY="23.0" text="登录教务系统" textFill="#8475d9">
-               <font>
-                  <Font name="Yu Gothic UI Light" size="45.0" />
-               </font>
-            </Label>
+            <Label layoutX="101.0" layoutY="86.0" prefHeight="30.0" prefWidth="62.0" text="账号：" />
+            <TextField fx:id="txtUserId" layoutX="171.0" layoutY="86.0" promptText="请输入" />
+            <Label layoutX="101.0" layoutY="139.0" prefHeight="30.0" prefWidth="62.0" text="密码：" />
+            <PasswordField fx:id="txtPassword" layoutX="171.0" layoutY="139.0" promptText="请输入" />
          </children>
       </Pane>
+      <Button fx:id="btnLogin" layoutX="209.0" layoutY="198.0" mnemonicParsing="false" onAction="#btnLoginAction" prefHeight="30.0" prefWidth="62.0" text="登录" />
       
    </children>
 </Pane>

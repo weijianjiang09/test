@@ -28,7 +28,7 @@
                   <Label fx:id="txtname_0" layoutX="188.0" layoutY="220.0" prefHeight="20.0" prefWidth="135.0" text="---" />
                   <Label fx:id="txtsex_0" layoutX="188.0" layoutY="261.0" prefHeight="20.0" prefWidth="126.0" text="---" />
                   <Button fx:id="btnupdate" layoutX="398.0" layoutY="100.0" mnemonicParsing="false" onAction="#updateAction" text="更新我的数据" />
-                  <Label fx:id="txtsno_0" layoutX="188.0" layoutY="105.0" prefHeight="20.0" prefWidth="135.0" text="---" />
+                  <TextField fx:id="txtsno_0" layoutX="183.0" layoutY="100.0" promptText="请输入你的学号" />
                </children></AnchorPane>
       </content>
     </Tab>
@@ -64,7 +64,8 @@
         <content>
           <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
                <children>
-                  <Button fx:id="btnresult_3" layoutX="81.0" layoutY="68.0" mnemonicParsing="false" onAction="#btnresults_3Action" prefHeight="30.0" prefWidth="125.0" text="查询所有课程" />
+                  <TextField fx:id="txtcourse_3" layoutX="81.0" layoutY="68.0" promptText="请输入课程号" />
+                  <Button fx:id="btnresult_3" layoutX="319.0" layoutY="68.0" mnemonicParsing="false" onAction="#btnresults_3Action" prefHeight="30.0" prefWidth="94.0" text="查询" />
                   <TableView fx:id="txtcoursechart_3" layoutX="81.0" layoutY="121.0" prefHeight="138.0" prefWidth="443.0">
                     <columns>
                       <TableColumn fx:id="chart_coursename" prefWidth="130.0" text="课程名" visible="false" />

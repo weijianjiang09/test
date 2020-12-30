@@ -37,17 +37,17 @@
                         <content>
                           <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="457.0" prefWidth="596.0">
                                  <children>
-                                    <TableView fx:id="txtcoursechart" layoutX="20.0" layoutY="14.0" prefHeight="263.0" prefWidth="556.0">
+                                    <TableView fx:id="txtdepartmentchart" layoutX="20.0" layoutY="14.0" prefHeight="263.0" prefWidth="556.0">
                                       <columns>
                                         <TableColumn fx:id="chart_cno_2" prefWidth="120.0" text="系编码" />
                                         <TableColumn fx:id="chart_coursename_2" prefWidth="150.0" text="系名称" />
                                           <TableColumn fx:id="chart_coursepreposition_2" prefWidth="285.0" text="系简介" />
                                       </columns>
                                     </TableView>
-                                    <Button fx:id="btncourse_change" layoutX="309.0" layoutY="401.0" mnemonicParsing="false" onAction="#btncourse_changeAction" text="确认修改" visible="false" />
-                                    <TextField fx:id="txtcoursenum_change" layoutX="20.0" layoutY="298.0" prefHeight="30.0" prefWidth="115.0" promptText="输入系编码" visible="false" />
-                                    <TextField fx:id="txtcoursename_change" layoutX="152.0" layoutY="298.0" prefHeight="30.0" prefWidth="114.0" promptText="输入系名称" visible="false" />
-                                    <TextArea fx:id="txtcoursepreposition_change" layoutX="20.0" layoutY="342.0" prefHeight="95.0" prefWidth="243.0" promptText="输入系简介" visible="false" />
+                                    <Button fx:id="btndepartment_change" layoutX="309.0" layoutY="401.0" mnemonicParsing="false" onAction="#btndepartment_changeAction" text="确认修改" visible="false" />
+                                    <TextField fx:id="txtdepartmentnum_change" layoutX="20.0" layoutY="298.0" prefHeight="30.0" prefWidth="115.0" promptText="输入系编码" visible="false" />
+                                    <TextField fx:id="txtdepartmentname_change" layoutX="152.0" layoutY="298.0" prefHeight="30.0" prefWidth="114.0" promptText="输入系名称" visible="false" />
+                                    <TextArea fx:id="txtdepartmentpreposition_change" layoutX="20.0" layoutY="342.0" prefHeight="95.0" prefWidth="243.0" promptText="输入系简介" visible="false" />
                                  </children>
                               </AnchorPane>
                         </content>
@@ -56,10 +56,10 @@
                         <content>
                           <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
                                  <children>
-                                    <TextField fx:id="txtcoursenum_add" layoutX="45.0" layoutY="48.0" promptText="请输入系编码" />
-                                    <TextField fx:id="txtcoursename_add" layoutX="45.0" layoutY="115.0" promptText="请输入系名称" />
-                                    <TextArea fx:id="txtcoursepreposition_add" layoutX="46.0" layoutY="181.0" prefHeight="100.0" prefWidth="200.0" promptText="请输入系简介" />
-                                    <Button fx:id="btncourse_add" layoutX="300.0" layoutY="251.0" mnemonicParsing="false" onAction="#btncourse_addAction" prefHeight="30.0" prefWidth="61.0" text="添加" />
+                                    <TextField fx:id="txtdepartmentnum_add" layoutX="45.0" layoutY="48.0" promptText="请输入系编码" />
+                                    <TextField fx:id="txtdepartmentname_add" layoutX="45.0" layoutY="115.0" promptText="请输入系名称" />
+                                    <TextArea fx:id="txtdepartmentpreposition_add" layoutX="46.0" layoutY="181.0" prefHeight="100.0" prefWidth="200.0" promptText="请输入系简介" />
+                                    <Button fx:id="btndepartment_add" layoutX="300.0" layoutY="251.0" mnemonicParsing="false" onAction="#btndepartment_addAction" prefHeight="30.0" prefWidth="61.0" text="添加" />
                                  </children>
                               </AnchorPane>
                         </content>
