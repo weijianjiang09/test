@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.chart.*?>
 <?import javafx.scene.image.*?>
 <?import javafx.scene.text.*?>
 <?import java.lang.*?>
@@ -28,7 +29,7 @@
                   <Label fx:id="txtname_0" layoutX="188.0" layoutY="220.0" prefHeight="20.0" prefWidth="135.0" text="---" />
                   <Label fx:id="txtsex_0" layoutX="188.0" layoutY="261.0" prefHeight="20.0" prefWidth="126.0" text="---" />
                   <Button fx:id="btnupdate" layoutX="398.0" layoutY="100.0" mnemonicParsing="false" onAction="#updateAction" text="更新我的数据" />
-                  <TextField fx:id="txtsno_0" layoutX="183.0" layoutY="100.0" promptText="请输入你的学号" />
+                  <Label fx:id="txtsno_0" layoutX="188.0" layoutY="105.0" prefHeight="20.0" prefWidth="135.0" text="---" />
                </children></AnchorPane>
       </content>
     </Tab>
@@ -36,14 +37,9 @@
       <content>
         <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
                <children>
-                  <TextField fx:id="txtcourse_1" layoutX="91.0" layoutY="105.0" prefHeight="30.0" prefWidth="218.0" promptText="请输入课程号" />
-                  <Button fx:id="btnresults_1" layoutX="348.0" layoutY="105.0" mnemonicParsing="false" onAction="#btnresults_1Action" prefHeight="30.0" prefWidth="104.0" text="查询成绩" />
-                  <Label layoutX="91.0" layoutY="204.0" prefHeight="37.0" prefWidth="147.0" text="你该课程成绩为：">
-                     <font>
-                        <Font name="Constantia" size="18.0" />
-                     </font>
-                  </Label>
-                  <Label fx:id="txtresult_1" layoutX="238.0" layoutY="213.0" prefHeight="20.0" prefWidth="107.0" text="0" />
+                  <TextField fx:id="txtcourse_1" layoutX="18.0" layoutY="14.0" prefHeight="30.0" prefWidth="218.0" promptText="请输入课程号" />
+                  <Button fx:id="btnresults_1" layoutX="292.0" layoutY="14.0" mnemonicParsing="false" onAction="#btnresults_1Action" prefHeight="30.0" prefWidth="104.0" text="查询成绩" />
+                  <TableView fx:id="chart_1" layoutX="18.0" layoutY="68.0" prefHeight="255.0" prefWidth="462.0" />
                </children></AnchorPane>
       </content>
     </Tab>
@@ -55,7 +51,9 @@
                   <TextField fx:id="txtcourse_2" layoutX="72.0" layoutY="143.0" promptText="请输入课程号" />
                   <Button fx:id="btnresults_2" layoutX="324.0" layoutY="143.0" mnemonicParsing="false" onAction="#btnresults_2Action" prefHeight="30.0" prefWidth="114.0" text="查询上课时间" />
                   <Label layoutX="72.0" layoutY="247.0" prefHeight="34.0" prefWidth="235.0" text="该课程在这个教室的上课时间为：" />
-                  <Label fx:id="txtresult_2" layoutX="307.0" layoutY="250.0" prefHeight="29.0" prefWidth="246.0" text="..." />
+                  <Label fx:id="txtresult_21" layoutX="85.0" layoutY="281.0" prefHeight="29.0" prefWidth="122.0" />
+                  <Label layoutX="219.0" layoutY="286.0" text="---" />
+                  <Label fx:id="txtresult_22" layoutX="261.0" layoutY="281.0" prefHeight="25.0" prefWidth="122.0" />
                </children>
             </AnchorPane>
         </content>
@@ -68,11 +66,27 @@
                   <Button fx:id="btnresult_3" layoutX="319.0" layoutY="68.0" mnemonicParsing="false" onAction="#btnresults_3Action" prefHeight="30.0" prefWidth="94.0" text="查询" />
                   <TableView fx:id="txtcoursechart_3" layoutX="81.0" layoutY="121.0" prefHeight="138.0" prefWidth="443.0">
                     <columns>
-                      <TableColumn fx:id="chart_coursename" prefWidth="130.0" text="课程名" visible="false" />
-                        <TableColumn fx:id="chart_coursepreposition" prefWidth="145.0" text="先修课程号" visible="false" />
-                      <TableColumn fx:id="chart_credit" prefWidth="167.0" text="学分" visible="false" />
+                      <TableColumn  prefWidth="130.0" text="课程名" visible="false" />
+                      <TableColumn  prefWidth="145.0" text="先修课程号" visible="false" />
+                      <TableColumn  prefWidth="167.0" text="学分" visible="false" />
                     </columns>
                   </TableView>
+               </children>
+            </AnchorPane>
+        </content>
+      </Tab>
+      <Tab text="数据分析">
+        <content>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+               <children>
+                  <BarChart fx:id="analysis" layoutX="26.0" layoutY="26.0" prefHeight="328.0" prefWidth="509.0" title="成绩分析">
+                    <xAxis>
+                      <CategoryAxis prefHeight="26.0" prefWidth="447.0" side="BOTTOM" />
+                    </xAxis>
+                    <yAxis>
+                      <NumberAxis side="LEFT" />
+                    </yAxis>
+                  </BarChart>
                </children>
             </AnchorPane>
         </content>

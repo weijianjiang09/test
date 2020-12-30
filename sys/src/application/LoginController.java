@@ -43,25 +43,24 @@ public class LoginController{
 //		String key;
 //		if((key=String.valueOf(txtUserId.getText().charAt(0))).equals("s")) {
 ////			Parent root = FXMLLoader.load(getClass().getResource("StudentMain.fxml"));
-			FXMLLoader loader =new  FXMLLoader(getClass().getResource("StudentMain.fxml"));
-			Parent root =loader.load();
-			StudentMainController controller = loader.getController();
-			controller.initData(txtUserId.getText());
-			Scene scene = new Scene(root,600, 500);
-			Stage stage=new Stage();
-			stage.initStyle(StageStyle.DECORATED); 
-			stage.setScene(scene);
-			stage.setTitle("学生教务系统");  
-			
-			stage.show(); 
-//		}else if((key=String.valueOf(txtUserId.getText().charAt(0))).equals("t")){
-//		    Parent root = FXMLLoader.load(getClass().getResource("TeacherMain.fxml"));  
-//		    Scene scene = new Scene(root,600, 500);
-//		    Stage stage=new Stage();
+//			FXMLLoader loader =new  FXMLLoader(getClass().getResource("StudentMain.fxml"));
+//			Parent root =loader.load();
+//			StudentMainController controller = loader.getController();
+//			controller.initData(txtUserId.getText());
+//			Scene scene = new Scene(root,600, 500);
+//			Stage stage=new Stage();
 //			stage.initStyle(StageStyle.DECORATED); 
-//		    stage.setScene(scene);
-//		    stage.setTitle("教师教务系统");  
-//	        stage.show();
+//			stage.setScene(scene);
+//			stage.setTitle("学生教务系统");  
+//			stage.show(); 
+//		}else if((key=String.valueOf(txtUserId.getText().charAt(0))).equals("t")){
+		    Parent root = FXMLLoader.load(getClass().getResource("TeacherMain.fxml"));  
+		    Scene scene = new Scene(root,600, 500);
+		    Stage stage=new Stage();
+			stage.initStyle(StageStyle.DECORATED); 
+		    stage.setScene(scene);
+		    stage.setTitle("教师教务系统");  
+	        stage.show();
 //		}else {
 //			new Alert(Alert.AlertType.NONE, "输入错误", new ButtonType[]{ButtonType.CLOSE}).show();
 //		}
