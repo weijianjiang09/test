@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.chart.*?>
 <?import javafx.scene.image.*?>
 <?import javafx.scene.text.*?>
 <?import java.lang.*?>
@@ -55,7 +56,9 @@
                   <TextField fx:id="txtcourse_2" layoutX="72.0" layoutY="143.0" promptText="请输入课程号" />
                   <Button fx:id="btnresults_2" layoutX="324.0" layoutY="143.0" mnemonicParsing="false" onAction="#btnresults_2Action" prefHeight="30.0" prefWidth="114.0" text="查询上课时间" />
                   <Label layoutX="72.0" layoutY="247.0" prefHeight="34.0" prefWidth="235.0" text="该课程在这个教室的上课时间为：" />
-                  <Label fx:id="txtresult_2" layoutX="307.0" layoutY="250.0" prefHeight="29.0" prefWidth="246.0" text="..." />
+                  <Label fx:id="txtresult_21" layoutX="85.0" layoutY="281.0" prefHeight="29.0" prefWidth="108.0" />
+                  <Label layoutX="219.0" layoutY="286.0" text="---" />
+                  <Label fx:id="txtresult_22" layoutX="261.0" layoutY="281.0" prefHeight="25.0" prefWidth="122.0" />
                </children>
             </AnchorPane>
         </content>
@@ -72,6 +75,22 @@
                       <TableColumn fx:id="chart_credit" prefWidth="167.0" text="学分" visible="false" />
                     </columns>
                   </TableView>
+               </children>
+            </AnchorPane>
+        </content>
+      </Tab>
+      <Tab text="数据分析">
+        <content>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+               <children>
+                  <BarChart fx:id="analysis" layoutX="26.0" layoutY="26.0" prefHeight="328.0" prefWidth="509.0" title="成绩分析">
+                    <xAxis>
+                      <CategoryAxis prefHeight="26.0" prefWidth="447.0" side="BOTTOM" />
+                    </xAxis>
+                    <yAxis>
+                      <NumberAxis side="LEFT" />
+                    </yAxis>
+                  </BarChart>
                </children>
             </AnchorPane>
         </content>

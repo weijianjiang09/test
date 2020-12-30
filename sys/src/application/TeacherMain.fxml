@@ -56,10 +56,10 @@
                         <content>
                           <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
                                  <children>
-                                    <TextField fx:id="txtcoursenum_add" layoutX="45.0" layoutY="48.0" promptText="请输入系编码" />
-                                    <TextField fx:id="txtcoursename_add" layoutX="45.0" layoutY="115.0" promptText="请输入系名称" />
-                                    <TextArea fx:id="txtcoursepreposition_add" layoutX="46.0" layoutY="181.0" prefHeight="100.0" prefWidth="200.0" promptText="请输入系简介" />
-                                    <Button fx:id="btncourse_add" layoutX="300.0" layoutY="251.0" mnemonicParsing="false" onAction="#btncourse_addAction" prefHeight="30.0" prefWidth="61.0" text="添加" />
+                                    <TextField fx:id="txtdepartment_num_add" layoutX="45.0" layoutY="48.0" promptText="请输入系编码" />
+                                    <TextField fx:id="txtdepartment_name_add" layoutX="45.0" layoutY="115.0" promptText="请输入系名称" />
+                                    <TextArea fx:id="txtdepartment_intro_add" layoutX="46.0" layoutY="181.0" prefHeight="100.0" prefWidth="200.0" promptText="请输入系简介" />
+                                    <Button fx:id="btndepartment_add" layoutX="300.0" layoutY="251.0" mnemonicParsing="false" onAction="#btndepartment_addAction" prefHeight="30.0" prefWidth="61.0" text="添加" />
                                  </children>
                               </AnchorPane>
                         </content>
@@ -159,6 +159,52 @@
                     </tabs>
                   </TabPane>
                </children></AnchorPane>
+        </content>
+      </Tab>
+      <Tab text="课程管理">
+        <content>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+               <children>
+                  <TabPane prefHeight="495.0" prefWidth="602.0" tabClosingPolicy="UNAVAILABLE">
+                    <tabs>
+                      <Tab text="浏览">
+                        <content>
+                          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                 <children>
+                                    <TableView fx:id="chartcourse" layoutX="23.0" layoutY="14.0" prefHeight="232.0" prefWidth="556.0">
+                                      <columns>
+                                        <TableColumn prefWidth="178.0" text="课程号" />
+                                        <TableColumn prefWidth="126.0" text="课程名" />
+                                          <TableColumn prefWidth="130.0" text="先修课程号" />
+                                          <TableColumn prefWidth="121.0" text="学分" />
+                                      </columns>
+                                    </TableView>
+                                    <TextField fx:id="txtcourse_num_change" layoutX="23.0" layoutY="272.0" promptText="输入课程号" visible="false" />
+                                    <TextField fx:id="txtcourse_name_change" layoutX="23.0" layoutY="313.0" promptText="输入课程名" visible="false" />
+                                    <TextField fx:id="txtcourse_preposition_change" layoutX="23.0" layoutY="357.0" promptText="输入先修课程号" visible="false" />
+                                    <TextField fx:id="txtcredit_change" layoutX="23.0" layoutY="397.0" promptText="输入学分" visible="false" />
+                                    <Button fx:id="btncourse_change" layoutX="301.0" layoutY="397.0" mnemonicParsing="false" onAction="#btncourse_changeAction" text="确认修改" visible="false" />
+                                 </children>
+                              </AnchorPane>
+                        </content>
+                      </Tab>
+                      <Tab text="添加">
+                        <content>
+                          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                 <children>
+                                    <TextField fx:id="txtcourse_num_add" layoutX="92.0" layoutY="62.0" promptText="输入课程号" />
+                                    <TextField fx:id="txtcourse_name_add" layoutX="92.0" layoutY="134.0" promptText="输入课程名" />
+                                    <TextField fx:id="txtcourse_preposition_add" layoutX="92.0" layoutY="207.0" promptText="输入先修课程号" />
+                                    <TextField fx:id="txtcredit_add" layoutX="92.0" layoutY="279.0" promptText="输入学分" />
+                                    <Button fx:id="btncourse_add" layoutX="368.0" layoutY="279.0" mnemonicParsing="false" onAction="#btncourse_addAction" text="添加" />
+                                 </children>
+                              </AnchorPane>
+                        </content>
+                      </Tab>
+                    </tabs>
+                  </TabPane>
+               </children>
+            </AnchorPane>
         </content>
       </Tab>
   </tabs>
