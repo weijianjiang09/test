@@ -45,7 +45,6 @@ public class LoginController{
 		String userId =txtUserId.getText();
 		if(userId.equals("")||txtPassword.equals("")) {
 			new Alert(Alert.AlertType.NONE, "账号或密码为空！", new ButtonType[]{ButtonType.CLOSE}).show();
-			return;
 		}else {
 			String strSQL = "select * from user where id=? and password=?";
 			List<Object> params = new ArrayList<>(2);
@@ -80,11 +79,12 @@ public class LoginController{
 				    stage.setTitle("教师教务系统");  
 			        stage.show();
 				}
+				Stage stager = (Stage) btnLogin.getScene().getWindow();
+				stager.close();
 			}else {
 				new Alert(Alert.AlertType.NONE, "账号或者密码错误！", new ButtonType[]{ButtonType.CLOSE}).show();
 			}
-			Stage stager = (Stage) btnLogin.getScene().getWindow();
-			stager.close();
+			
 		}
 	}
 }

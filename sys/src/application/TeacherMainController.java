@@ -10,6 +10,7 @@ import util.CapsJdbc;
 import util.CapsRes;
 import util.CapsTableView;
 
+import java.math.BigDecimal;
 import java.net.URL;
 import java.util.ArrayList;
 import java.util.List;
@@ -194,15 +195,17 @@ public class TeacherMainController implements Initializable{
 		new Alert(Alert.AlertType.NONE, "提交成功！", new ButtonType[]{ButtonType.CLOSE}).show();
 		refresh();
 	}
+//	java.math.BigDecimal
 	@FXML
 	public void btngrade_changeAction (ActionEvent event) {
 		List<Object> params = new ArrayList<>(4);
 		params.add(txtgradesno_change.getText());
 		params.add(txtgradecno_change.getText());
-		params.add(Integer.parseInt(txtgrade_change.getText()));
-		params.add(txtgrade_change_h.getText());
+		BigDecimal b1 = new BigDecimal(txtgrade_change.getText());
+		params.add(b1);
 		params.add(txtgrade_change_g.getText());
-		String strSQL = "update studentreport set sno=? course=?,report=? where sno=? and course=?;";
+		params.add(txtgrade_change_h.getText());
+		String strSQL = "update studentreport set sno=? ,course=?,report=? where sno=? and course=?;";
 		CapsJdbc.execSQL(strSQL,params);
 		new Alert(Alert.AlertType.NONE, "提交成功！", new ButtonType[]{ButtonType.CLOSE}).show();
 		refresh();
@@ -300,8 +303,8 @@ public class TeacherMainController implements Initializable{
 		txtdepartmentchart.getColumns().clear();
 		ArrayList<String> listD = new ArrayList<String>();
 		listD.add("系编码");
-		listD.add("系系名称");
-		listD.add("系简介");
+		listD.add("系系名称"); 
+		listD.add("系简介");  
 		CapsTableView.dealTableView(capsRes,txtdepartmentchart,listD);
 		CapsTableView.addButtonToTable(txtdepartmentchart,(recMap,idCol) -> {  
 	   		 String delSql = "delete from department where department_num =?";
@@ -362,9 +365,9 @@ public class TeacherMainController implements Initializable{
 			   CapsJdbc.execSQL(delSql,params);
 			   refresh();
 		   		},(recMap,idCol) -> {
-		   			txtcourse_num_change.setVisible(true);
-		   			txtcredit_change.setVisible(true);
 		   			txtcourse_name_change.setVisible(true);
+		   			txtcredit_change.setVisible(true);
+		   			txtcourse_preposition_change.setVisible(true);
 		   			btncourse_change.setVisible(true);
 		   			txtcourse_num_change.setText(recMap.get("course_num"));
 		   			txtcourse_name_change.setText(recMap.get("course_name"));

@@ -130,7 +130,7 @@ public class StudentMainController implements Initializable {
 	// Event Listener on Button[#btnresults_1].onAction
 	@FXML
 	public void btnresults_1Action(ActionEvent event) {
-		txtUserId="190101";
+//		txtUserId="190101";
 		String strSQL = "select * from studentreport where Sno=? and course=?";
 		List<Object> params = new ArrayList<>(2);
 		params.add(txtUserId);
