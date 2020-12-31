@@ -151,7 +151,7 @@
                         <content>
                           <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
                                  <children>
-                                    <Button fx:id="btngrade_add" layoutX="351.0" layoutY="190.0" mnemonicParsing="false" onAction="#btngrade_addAction" text="确认修改" />
+                                    <Button fx:id="btngrade_add" layoutX="351.0" layoutY="190.0" mnemonicParsing="false" onAction="#btngrade_addAction" text="添加" />
                                     <TextField fx:id="txtgradesno_add" layoutX="56.0" layoutY="47.0" promptText="请输入学号" />
                                     <TextField fx:id="txtgradecno_add" layoutX="56.0" layoutY="119.0" promptText="请输入课程号" />
                                     <TextField fx:id="txtgrade_add" layoutX="56.0" layoutY="190.0" promptText="请输入成绩" />

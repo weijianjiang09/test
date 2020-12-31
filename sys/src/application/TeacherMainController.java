@@ -133,7 +133,7 @@ public class TeacherMainController implements Initializable{
 	@FXML
 	public void updateAction(ActionEvent event) {
 //		初始化个人信息
-		txtUserId="1101";
+//		txtUserId="1101";
 		String strSQL = "select * from teacher where teacher_num='"+txtUserId+"'";
 		capsRes = CapsJdbc.execSQL(strSQL,null);
 		txtteachername_0.setText(capsRes.getRs().get(0).get(2));
@@ -199,7 +199,7 @@ public class TeacherMainController implements Initializable{
 		List<Object> params = new ArrayList<>(4);
 		params.add(txtgradesno_change.getText());
 		params.add(txtgradecno_change.getText());
-		params.add(txtgrade_change.getText());
+		params.add(Integer.parseInt(txtgrade_change.getText()));
 		params.add(txtgrade_change_h.getText());
 		params.add(txtgrade_change_g.getText());
 		String strSQL = "update studentreport set sno=? course=?,report=? where sno=? and course=?;";
@@ -212,7 +212,7 @@ public class TeacherMainController implements Initializable{
 		List<Object> params = new ArrayList<>(3);
 		params.add(txtgradesno_add.getText());
 		params.add(txtgradecno_add.getText());
-		params.add(txtgrade_add.getText());
+		params.add(Integer.parseInt(txtgrade_add.getText()));
 		String strSQLx = "select * from studentreport where sno= '"+txtsno_add.getText()+"' and course='"+
 				txtgradecno_add.getText()+"';";
 		if(CapsJdbc.execSQL(strSQLx,null).getTtlNum()==0) {
@@ -243,7 +243,7 @@ public class TeacherMainController implements Initializable{
 		params.add(txtcourse_num_add.getText());
 		params.add(txtcourse_name_add.getText());
 		params.add(txtcourse_preposition_add.getText());
-		params.add(String.valueOf(txtcredit_add.getText()));
+		params.add(Integer.parseInt(txtcredit_add.getText()));
 		String strSQLx = "select * from course where course_num='"+txtcourse_num_add.getText()+"'";
 		System.out.println(CapsJdbc.execSQL(strSQLx,null));
 		if(CapsJdbc.execSQL(strSQLx,null).getTtlNum()==0) {
