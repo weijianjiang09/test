@@ -133,8 +133,8 @@ public class TeacherMainController implements Initializable{
 	@FXML
 	public void updateAction(ActionEvent event) {
 //		初始化个人信息
-		txtUserId="11";
-		String strSQL = "select * from teacher where teacher_num= '"+txtUserId+"'";
+		txtUserId="1101";
+		String strSQL = "select * from teacher where teacher_num='"+txtUserId+"'";
 		capsRes = CapsJdbc.execSQL(strSQL,null);
 		txtteachername_0.setText(capsRes.getRs().get(0).get(2));
 		txtTno_0.setText(capsRes.getRs().get(0).get(0));
@@ -150,7 +150,7 @@ public class TeacherMainController implements Initializable{
 		params.add(txtname_add.getText());
 		params.add(txtsex_add.getText());
 		String strSQLx = "select * from teacher where teacher_num= '"+txtsno_add.getText()+"'";
-		if(CapsJdbc.execSQL(strSQLx,null).getTtlNum()!=0) {
+		if(CapsJdbc.execSQL(strSQLx,null).getTtlNum()==0) {
 			String strSQL = "INSERT into student (Sno,Cno,Class,Sname,Ssex) VALUES (?,?,?,?,?);";
 			CapsJdbc.execSQL(strSQL,params);
 			new Alert(Alert.AlertType.NONE, "提交成功！", new ButtonType[]{ButtonType.CLOSE}).show();
@@ -163,7 +163,7 @@ public class TeacherMainController implements Initializable{
 	@FXML
 	public void btnstudent_changeAction(ActionEvent event) {
 		String strSQL = "update student set Cno='"+txtcno_change.getText()+"',Class='"+txtclassnum_change.getText()+
-				"',Sname='"+txtname_change.getText()+"',Ssex='"+txtsex_change.getText()+"' where Sno ='"+txtsno_change.getText()+"';";
+				"',Sname='"+txtname_change.getText()+"',Ssex='"+txtsex_change.getText()+"' where Sno ="+txtsno_change.getText()+";";
 		CapsJdbc.execSQL(strSQL,null);
 		new Alert(Alert.AlertType.NONE, "提交成功！", new ButtonType[]{ButtonType.CLOSE}).show();
 		refresh();
@@ -175,7 +175,7 @@ public class TeacherMainController implements Initializable{
 		params.add(txtdepartmentname_add.getText());
 		params.add(txtdepartmentpreposition_add.getText());
 		String strSQLx = "select * from department where department_num= '"+txtdepartmentnum_add.getText()+"'";
-		if(CapsJdbc.execSQL(strSQLx,null).getTtlNum()!=0) {
+		if(CapsJdbc.execSQL(strSQLx,null).getTtlNum()==0) {
 			String strSQL = "INSERT into department (department_num,department_name,department_intro) VALUES (?,?,?);";
 			CapsJdbc.execSQL(strSQL,params);
 			new Alert(Alert.AlertType.NONE, "提交成功！", new ButtonType[]{ButtonType.CLOSE}).show();
@@ -188,8 +188,8 @@ public class TeacherMainController implements Initializable{
 	// Event Listener on Button[#btncourse_change].onAction
 	@FXML
 	public void btndepartment_changeAction(ActionEvent event) {
-		String strSQL = "update student set department_num='"+txtdepartmentnum_change.getText()+"',department_name='"+txtdepartmentname_change.getText()+
-				"',department_intro='"+txtdepartmentpreposition_change.getText()+"' where department_num ='"+txtdepartmentnum_change.getText()+"';";
+		String strSQL = "update department set department_num='"+txtdepartmentnum_change.getText()+"',department_name='"+txtdepartmentname_change.getText()+
+				"',department_intro='"+txtdepartmentpreposition_change.getText()+"' where department_num ="+txtdepartmentnum_change.getText()+";";
 		CapsJdbc.execSQL(strSQL,null);
 		new Alert(Alert.AlertType.NONE, "提交成功！", new ButtonType[]{ButtonType.CLOSE}).show();
 		refresh();
@@ -215,7 +215,7 @@ public class TeacherMainController implements Initializable{
 		params.add(txtgrade_add.getText());
 		String strSQLx = "select * from studentreport where sno= '"+txtsno_add.getText()+"' and course='"+
 				txtgradecno_add.getText()+"';";
-		if(CapsJdbc.execSQL(strSQLx,null).getTtlNum()!=0) {
+		if(CapsJdbc.execSQL(strSQLx,null).getTtlNum()==0) {
 			String strSQL = "INSERT into studentreport (sno,course,report) VALUES (?,?,?);";
 			CapsJdbc.execSQL(strSQL,params);
 			new Alert(Alert.AlertType.NONE, "提交成功！", new ButtonType[]{ButtonType.CLOSE}).show();
@@ -239,13 +239,14 @@ public class TeacherMainController implements Initializable{
 	}
 	@FXML
 	public void btncourse_addAction (ActionEvent event) {
-		List<Object> params = new ArrayList<>(3);
+		List<Object> params = new ArrayList<>(4);
 		params.add(txtcourse_num_add.getText());
 		params.add(txtcourse_name_add.getText());
 		params.add(txtcourse_preposition_add.getText());
-		params.add(txtcredit_add.getText());
-		String strSQLx = "select * from course where course_num= '"+txtcourse_num_add.getText()+"'";
-		if(CapsJdbc.execSQL(strSQLx,null).getTtlNum()!=0) {
+		params.add(String.valueOf(txtcredit_add.getText()));
+		String strSQLx = "select * from course where course_num='"+txtcourse_num_add.getText()+"'";
+		System.out.println(CapsJdbc.execSQL(strSQLx,null));
+		if(CapsJdbc.execSQL(strSQLx,null).getTtlNum()==0) {
 			String strSQL = "INSERT into course (course_num,course_name,course_preposition,credit) VALUES (?,?,?,?);";
 			CapsJdbc.execSQL(strSQL,params);
 			new Alert(Alert.AlertType.NONE, "提交成功！", new ButtonType[]{ButtonType.CLOSE}).show();
@@ -325,7 +326,7 @@ public class TeacherMainController implements Initializable{
 		listG.add("学号");
 		listG.add("课程号");
 		listG.add("分数");
-		CapsTableView.dealTableView(capsRes,gradechart,listD);
+		CapsTableView.dealTableView(capsRes,gradechart,listG);
 		CapsTableView.addButtonToTable(gradechart,(recMap,idCol) -> {  
 	   		 String delSql = "delete from studentreport where sno =?";
 			   List<Object> params = new ArrayList<>(2);

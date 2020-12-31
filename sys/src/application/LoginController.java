@@ -69,7 +69,5 @@ public class LoginController{
 //		}else {
 //			new Alert(Alert.AlertType.NONE, "输入错误", new ButtonType[]{ButtonType.CLOSE}).show();
 //		} 
-//		
-
 	}
 }
